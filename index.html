@@ -1,0 +1,487 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> 猿猴森林</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+
+
+
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            background-color: rgb(44, 44, 44);
+            width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+
+
+
+        #color {
+            background: linear-gradient(white, rgb(212, 203, 203), rgb(192, 172, 172), rgb(168, 192, 168), rgb(182, 182, 207), rgb(173, 157, 184), rgb(190, 156, 190));
+            width: 220px;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            position: fixed;
+
+        }
+
+        #home {
+
+
+            background-color: rgb(0, 0, 0);
+            width: 220px;
+            height: 100%;
+            opacity: 0.65;
+            box-shadow: 2px 0px 0.5px #000000;
+            position: fixed;
+            margin: 0px;
+            padding: 0px;
+
+
+        }
+
+
+
+        #menuSearch {
+            position: relative;
+            width: 150px;
+            height: 25px;
+            top: 50px;
+            left: 25px;
+            border: 0.5px solid white;
+            border-radius: 5px;
+            text-align: center;
+            background-color: rgb(61, 61, 61);
+
+        }
+
+        #menuSearch:focus {
+            background-color: white;
+
+        }
+
+
+        #menuButton{
+            position: relative;
+            top: 80px;
+            margin: 0px;
+            padding: 2px;
+            display: block;
+            height: 35px;
+            font-size: 20px;
+            user-select: none;
+            text-decoration: none;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            text-decoration: none;
+
+
+
+
+
+
+        }
+
+        #menuButton:hover {
+            background-color: rgb(85, 81, 81);
+
+        }
+
+
+        .active {
+            background-color: rgb(85, 81, 81);
+        }
+
+        #menu {
+            position: relative;
+            left: 30px;
+            margin: 0px;
+            list-style-type: none;
+            cursor: default;
+            color: white;
+            line-height: 35px;
+
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        }
+
+        #icon {
+            position: relative;
+            top: 2px;
+            margin-right: 10px;
+        }
+
+        #showPhoto {
+            padding: 0px;
+            margin:40px;
+            margin-left:190px;
+            margin-top: 0px;
+            height: 280px;
+            width: 890px;
+            position: relative;
+            float: left;
+            left: 100px;
+            overflow:hidden;
+            
+            
+           
+            border-radius: 13px;
+            
+        }
+        #weixinBack{
+            background: linear-gradient(white, rgb(212, 203, 203), rgb(192, 172, 172), rgb(168, 192, 168), rgb(182, 182, 207), rgb(173, 157, 184), rgb(190, 156, 190));
+            height: 100%;
+            width: 162px;
+            position: relative;
+            float: left;
+            z-index: -99;
+        }
+        #weixin{
+            background: linear-gradient(white, rgb(212, 203, 203), rgb(192, 172, 172), rgb(168, 192, 168), rgb(182, 182, 207), rgb(173, 157, 184), rgb(190, 156, 190));
+            height: 100%;
+            width: 162px;
+            position: relative;
+            float: left;
+            z-index: -99;
+            }
+        #weixinImg{
+            width: 100px;
+            position: relative;
+            left:30px;
+            top:30px;
+            opacity: 0.8;
+            
+        }
+        #title{
+            position: relative;
+            top:10px;
+            left: 49px;
+           
+        }
+        #tip{
+            font-size: 75%;
+            text-indent:20px;
+            position: relative;
+            top: 0px;
+            margin: 8px;
+            left:2px;
+            
+        }
+        #showImg{
+            height: 146.2%;
+            float: right;
+            
+        }
+
+        #totalBox {
+            margin-left: 220px;
+
+
+
+        }
+
+        /*这里以下的css是vue的模板使用的
+        ；
+        ；
+        ；
+        ；
+        ；
+        ；*/
+        #box {
+            width: 426px;
+            height: 280px;
+            background: rgb(61, 61, 61);
+            float: left;
+            margin: 20px;
+            margin-top:0px;
+            margin-bottom:  40px;
+            position: relative;
+            left: 50px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px black;
+
+
+        }
+
+        #boxImg {
+            height: 280px;
+
+            position: relative;
+            left: 0px;
+
+
+
+        }
+
+        #textTop {
+            position: absolute;
+            width: 100%;
+            left: 0px;
+            top: 0px;
+
+            height: 60px;
+            line-height: 60px;
+            font-size: 40px;
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+            background-color: black;
+            opacity: 0.8;
+            color: aliceblue;
+            transition: 0.5s ease-out;
+            -moz-transition: 0.5s ease-out;
+            /* Firefox 4 */
+            -webkit-transition: 0.5 s ease-out;
+            /* Safari 和 Chrome */
+            -o-transition: width 0.5s ease-out;
+            /* Opera */
+
+
+
+
+        }
+
+        #textBottom {
+            position: absolute;
+            left: 7.5%;
+            right: 7.5%;
+            width: 85%;
+            bottom: -60px;
+            height: 0px;
+            background-color: white;
+            opacity: 0;
+            color: aliceblue;
+            border-radius: 10px;
+            transition: 0.5s ease-out;
+            -moz-transition: 0.5s ease-out;
+            /* Firefox 4 */
+            -webkit-transition: 0.5s ease-out;
+            /* Safari 和 Chrome */
+            -o-transition: width 0.5s ease-out;
+            /* Opera */
+
+
+        }
+
+        #box:hover #textTop {
+            top: -60px;
+            height: 0px;
+
+
+        }
+
+        #box:hover #textBottom {
+            bottom: 20px;
+            height: 60px;
+            opacity: 0.9;
+
+        }
+
+
+        #getButton {
+            cursor: pointer;
+            background-color: transparent;
+            border: 0px solid transparent;
+            outline: none;
+            width: 70px;
+            height: 24px;
+            background-color: rgb(44, 44, 44);
+            position: absolute;
+            right: 15px;
+            top: 18px;
+            text-align: center;
+            line-height: 24px;
+            padding: 0px;
+            padding-top: 0px;
+            border-radius: 12px;
+            opacity: 1;
+            color: white;
+
+        }
+
+        #getKey {
+            color: black;
+            line-height: 60px;
+            position: absolute;
+            left: 15px;
+            font-size: 13px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="hhh">
+        <div id="color">
+
+            <div id="home">
+
+
+                <input id="menuSearch" type="text" placeholder="搜索">
+                <a id="menuButton" @click="looks=1" :class="{active:looks==1}" href="#top">
+
+                    <p id="menu"><img src="icon\探索.png" id="icon" />探索</p>
+                </a>
+                <a id="menuButton" @click="looks=2" :class="{active:looks==2}" href="#top">
+                    <p id="menu"><img src="icon\射击.png" id="icon" />射击</p>
+                </a>
+                <a id="menuButton" @click="looks=3" :class="{active:looks==3}" href="#top">
+                    <p id="menu"><img src="icon\动作.png" id="icon" />动作</p>
+                </a>
+                <a id="menuButton" @click="looks=4" :class="{active:looks==4}" href="#top">
+                    <p id="menu"><img src="icon\扮演.png" id="icon" />扮演</p>
+                </a>
+                <a id="menuButton" @click="looks=5" :class="{active:looks==5}" href="#top">
+                    <p id="menu"><img src="icon\策略.png" id="icon" />策略</p>
+                </a>
+                <a id="menuButton" @click="looks=6" :class="{active:looks==6}" href="#top">
+                    <p id="menu"><img src="icon\竞速.png" id="icon" />竞速</p>
+                </a>
+
+
+                <a id="menuButton" @click="looks=9" :class="{active:looks==9}" href="#top">
+                    <p id="menu"><img src="icon\模拟.png" id="icon" />模拟</p>
+                </a>
+
+
+
+
+            </div>
+        </div>
+
+
+        <div id="app">
+            <a name="top">&nbsp;</a>
+            <div id="showPhoto"><div id="weixinBack"><div id="weixin"><img id="weixinImg" src="image/weixinImg.png"><h5 id="title">微信公众号</h5><div id="tip">为什么要加入公众号？我每天会更新一款最新的游戏或者修改器，而网站由于无法及时通知各位，仅有公众号才能满足此条件。</div></div></div><img id="showImg" src="http://a1.huanqiu.cn/images/0ae2b637ee3c58dafab77c03bb965cf5.gif"></div>
+            <!-- 哈哈哈哈哈 -->
+            <div v-for="item in items1" v-show="looks==1">
+                <div id="totalBox">
+                    <div id="box"><img id="boxImg" v-bind:src="item.photo">
+
+                        <div id="textTop">{{item.title}}</div>
+                        <div id="textBottom">
+                            <div id="getKey">关注微信公众号获得百度云提取码</div>>
+                            <a v-bind:href="item.href" target="_blank"><button id="getButton">获取</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 哈哈哈哈哈 -->
+            <div v-for="item in items2" v-show="looks==2">
+                <div id="totalBox">
+                    <div id="box"><img id="boxImg" v-bind:src="item.photo">
+
+                        <div id="textTop">{{item.title}}</div>
+                        <div id="textBottom">
+                            <div id="getKey">关注微信公众号获得百度云提取码</div>>
+                            <a v-bind:href="item.href" target="_blank"><button id="getButton">获取</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 哈哈哈哈哈 -->
+            <div v-for="item in items3" v-show="looks==3">
+                <div id="totalBox">
+                    <div id="box"><img id="boxImg" v-bind:src="item.photo">
+
+                        <div id="textTop">{{item.title}}</div>
+                        <div id="textBottom">
+                            <div id="getKey">关注微信公众号获得百度云提取码</div>>
+                            <a v-bind:href="item.href" target="_blank"><button id="getButton">获取</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 哈哈哈哈哈 -->
+            <div v-for="item in items4" v-show="looks==4">
+                <div id="totalBox">
+                    <div id="box"><img id="boxImg" v-bind:src="item.photo">
+
+                        <div id="textTop">{{item.title}}</div>
+                        <div id="textBottom">
+                            <div id="getKey">关注微信公众号获得百度云提取码</div>>
+                            <a v-bind:href="item.href" target="_blank"><button id="getButton">获取</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 哈哈哈哈哈 -->
+            <div v-for="item in items5" v-show="looks==5">
+                <div id="totalBox">
+                    <div id="box"><img id="boxImg" v-bind:src="item.photo">
+
+                        <div id="textTop">{{item.title}}</div>
+                        <div id="textBottom">
+                            <div id="getKey">关注微信公众号获得百度云提取码</div>>
+                            <a v-bind:href="item.href" target="_blank"><button id="getButton">获取</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 哈哈哈哈哈 -->
+            <div v-for="item in items6" v-show="looks==6">
+                <div id="totalBox">
+                    <div id="box"><img id="boxImg" v-bind:src="item.photo">
+
+                        <div id="textTop">{{item.title}}</div>
+                        <div id="textBottom">
+                            <div id="getKey">关注微信公众号获得百度云提取码</div>>
+                            <a v-bind:href="item.href" target="_blank"><button id="getButton">获取</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 哈哈哈哈哈 -->
+            <div v-for="item in items9" v-show="looks==9">
+                <div id="totalBox">
+                    <div id="box"><img id="boxImg" v-bind:src="item.photo">
+
+                        <div id="textTop">{{item.title}}</div>
+                        <div id="textBottom">
+                            <div id="getKey">关注微信公众号获得百度云提取码</div>>
+                            <a v-bind:href="item.href" target="_blank"><button id="getButton">获取</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+
+
+
+
+        </div>
+    </div>
+
+
+
+</body>
+
+
+
+<script src="use.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
