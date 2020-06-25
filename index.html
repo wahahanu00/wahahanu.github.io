@@ -1,10 +1,14 @@
 <html>
-
+    
 <head>
     <meta charset="utf-8">
-    <title>0</title>
-    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
-
+    <meta name="renderer" content="webkit">
+    <title> 先生说之所以会创造出小新这个形象，是因为他在观察自己的孩子的时候，发现小孩子的想法往往非常独特，以至于作者被小孩的世界所吸引。所有的小孩都有乖巧和调皮的两面性。这种两面性对作者来讲是十分有趣的。反过来作者正是在自己的作品中反映了这一两面性。他同时承认“小新”有一部分是他自己的翻版。据他透露，蜡笔小新里有许多内容是他现实生活的写照，例如：小新爸爸造型与他本人有些相似；小新和他爸爸两道浓眉毛乃是因作者自己嫌弃自己的眉毛太稀疏</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    
+    <link rel=”icon” href=”/favicon.ico” mce_href=”/favicon.ico” type=”image/x-icon”>
+    <link rel=”shortcut icon” href=”/favicon.ico” mce_href=”/favicon.ico” type=”image/x-icon”>
 
 
     <style>
@@ -67,7 +71,7 @@
         }
 
 
-        #menuButton{
+        #menuButton {
             position: relative;
             top: 80px;
             margin: 0px;
@@ -121,22 +125,23 @@
 
         #showPhoto {
             padding: 0px;
-            margin:40px;
-            margin-left:190px;
+            margin: 40px;
+            margin-left: 190px;
             margin-top: 0px;
             height: 280px;
             width: 890px;
             position: relative;
             float: left;
             left: 100px;
-            overflow:hidden;
-            
-            
-           
+            overflow: hidden;
+
+
+
             border-radius: 13px;
-            
+
         }
-        #weixinBack{
+
+        #weixinBack {
             background: linear-gradient(white, rgb(212, 203, 203), rgb(192, 172, 172), rgb(168, 192, 168), rgb(182, 182, 207), rgb(173, 157, 184), rgb(190, 156, 190));
             height: 100%;
             width: 162px;
@@ -144,41 +149,46 @@
             float: left;
             z-index: -99;
         }
-        #weixin{
+
+        #weixin {
             background: linear-gradient(white, rgb(212, 203, 203), rgb(192, 172, 172), rgb(168, 192, 168), rgb(182, 182, 207), rgb(173, 157, 184), rgb(190, 156, 190));
             height: 100%;
             width: 162px;
             position: relative;
             float: left;
             z-index: -99;
-            }
-        #weixinImg{
-            width: 100px;
-            position: relative;
-            left:30px;
-            top:30px;
-            opacity: 0.8;
-            
         }
-        #title{
+
+        #weixinImg {
+            width: 150px;
             position: relative;
-            top:10px;
-            left: 49px;
-           
+            left: 5px;
+            top: 10px;
+            opacity: 1;
+
         }
-        #tip{
+
+        #title {
+            position: relative;
+            top: -8px;
+            left: 45px;
+            font-size: 16px
+        }
+
+        #tip {
             font-size: 75%;
-            text-indent:20px;
+            text-indent: 20px;
             position: relative;
-            top: 0px;
+            top: -30px;
             margin: 8px;
-            left:2px;
-            
+            left: 2px;
+
         }
-        #showImg{
+
+        #showImg {
             height: 146.2%;
             float: right;
-            
+
         }
 
         #totalBox {
@@ -201,8 +211,8 @@
             background: rgb(61, 61, 61);
             float: left;
             margin: 20px;
-            margin-top:0px;
-            margin-bottom:  40px;
+            margin-top: 0px;
+            margin-bottom: 40px;
             position: relative;
             left: 50px;
             overflow: hidden;
@@ -316,18 +326,286 @@
             font-size: 13px;
 
         }
+
+
+
+
+
+        .diaocha:hover {
+            color: red;
+
+        }
+
+        .qian {
+            position: fixed;
+            top: 50px;
+            left: 20%;
+            z-index: 1000;
+            margin-left: 300px;
+            font-weight: 600;
+            opacity: 0.9;
+            width: 50%;
+            height: 80%;
+
+        }
+
+        .qian>div {
+            padding: 50px 60px 100px 70px;
+            background-color: rgb(72, 67, 67);
+
+            border-radius: 30px;
+        }
+
+        .qiantitle {
+            width: 400px;
+            height: 40px;
+            background-color: #eeeeee;
+            margin: auto;
+            margin-bottom: 15px;
+            border-radius: 15px;
+            background: linear-gradient(to right, rgb(202, 225, 238), rgb(132, 178, 229), rgb(192, 172, 172), rgb(168, 192, 168), rgb(182, 182, 207), rgb(173, 157, 184), rgb(190, 156, 190));
+            position: relative;
+            top: -30px;
+            left: -30px;
+        }
+
+        .qianbody {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            top: -50px
+        }
+
+        .vipkeyclass {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            top: -20px;
+            left: -5px;
+            align-self: stretch
+        }
+
+        .vipkeyclass>div {
+            width: 20%;
+            position: relative;
+            left: 100px;
+            top: 17px;
+            z-index: 1000;
+        }
+
+        .vipkeyclass>h4 {
+            color: #eeeeee;
+            width: 80px;
+            position: relative;
+            top: 0px;
+            left: 100px
+        }
+
+        .vipkeyclass>input {
+            height: 25px;
+            width: 100px;
+            position: relative;
+            top: 19px;
+            left: 80px;
+            border-radius: 5px;
+            padding: 2px;
+
+
+        }
+
+
+
+        .qiantitle>div {
+            text-align: center;
+            padding: 5px;
+            font-size: 20px;
+        }
+
+        #qianbox {
+            width: 400px;
+            height: 500px;
+            position: relative;
+            margin: 0px auto;
+            position: relative;
+            left:-100px
+            
+        }
+
+        .qian>img {
+
+
+
+            width: 200px;
+
+        }
+
+        .zhifu {
+            position: fixed;
+            top: 400px;
+            left: 0px;
+            z-index: 1000;
+
+        }
+
+        .zhifu>img {
+            width: 220px;
+        }
+
+        .zhifu>p {
+            font-size: 20px;
+            margin: 20px 10px;
+            color: red;
+            font-weight: 900;
+            margin: 0px;
+        }
+        .vipgame{
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            top:-20px;
+            justify-content: space-between;
+            align-items: stretch;
+            border-style: dashed;
+            border-color: #ffffff;
+            padding: 0px 50px 20px 50px;
+            
+        }
+        .vipgame-name>h3{
+            position: relative;
+            left:20px;
+            color: #eeeeee
+        }
+        .vipgame-name>img{
+            position: relative;
+            left:-30px;
+            border-radius: 5px；
+            
+        }
+        .vipgame-down>a{
+            position: relative;
+            top:50px;
+            left:100px
+        }
+        .vipgame-down>h5{
+            position: relative;
+            top:90px;
+            left:20px;
+            color: #eeeeee
+        }
+        .gamevip-elese{
+            color: #eeeeee;
+            position: relative;
+            left: -10px;
+            top:40px;
+            
+        }
     </style>
 
 </head>
 
 <body>
+
     <div id="hhh">
+
+        <div>
+
+
+
+            <div class="qian" v-show="money==1">
+
+                <div id="qianbox">
+                    <div class="qiantitle">
+                        <div>成为猿猴森林会员，获取全站游戏</div>
+                        <a @click="money=0" class="qiantitleoff"><img src="image\off.png"
+                                style="position: absolute;right:-45px;top:3px"></a>
+                    </div>
+                    <div class="qianbody">
+                        <h4 style="color: #eeeeee;margin-bottom: 8px">微信扫码发送4.9元红包成为会员，下载3500G单机游戏 </h4>
+                        <h5 style="color: #eeeeee;margin-left: auto;margin-right: auto;margin-top: 0px;margin-bottom: 8px;">(附送半个月百度网盘超级会员账号) </h5>
+                        <img src="image\haoyou.jpg" style="width: 50%;">
+                        <br>
+                        <div class="vipkeyclass">
+                            <h4>会员码</h4>
+                            <input v-model="vipkey" placeholder="  填写会员码">
+                            <div>
+                                <img v-if="vipkey==num | vipkey==num_week" src="image\yes.png">
+                                <img v-else-if="vipkey!=''" src="image\no.png">
+                            </div>
+                        </div>
+                        <div class="vipgame">
+
+                            <div class="vipgame-name">
+                                <h3>{{title}}</h3>
+                                <img v-bind:src="photo" style="width: 200px">
+                            </div>
+                            <div class="vipgame-down" v-if="vipkey==num | vipkey==num_week">
+                                <a v-bind:href="href" target="_blank"><button id="getButton">点此下载</button></a>
+
+                                <h5>提取码 : {{key}}</h5>
+
+                            </div>
+                            <div v-else>
+                                <h3 class="gamevip-elese">购买会员后显示下载地址</h3>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="zhifu">
+
+            <!-- <p>扫描网站正上方二维码</p>
+           <p>关注微信公众号</p> -->
+           <div
+            style="color: #eeeeee;font-size: 18px;line-height: 20px; margin-top: 00px;width: 220px;margin-left: 30px;color:#ff0000">
+            <p>为方便各位下载游戏</p>
+
+            </div> 
+           <div
+            style="color: #eeeeee;font-size: 18px;line-height: 20px; margin-top: 00px;width: 220px;margin-left: 30px;color:#ff0000">
+            <p>每日前10名购买会员者</p>
+
+            </div>
+            <div
+                style="color: #eeeeee;font-size: 18px;line-height: 20px; margin-top: 00px;width: 220px;margin-left: 30px;color:#ff0000">
+                <p>附送半个月时间的<p>
+
+            </div>
+            <div
+            style="color: #eeeeee;font-size: 18px;line-height: 20px; margin-top: 00px;width: 220px;margin-left: 30px;color:#ff0000">
+            <p>百度网盘超级会员</p>
+
+            </div>
+            <div
+            style="color: #eeeeee;font-size: 18px;line-height: 20px; margin-top: 00px;width: 220px;margin-left: 30px;color:#ff0000">
+            <p>可加速下载</p>
+
+            </div>
+            <!-- <div
+                style="color: #eeeeee;font-size: 16px;line-height: 20px; margin-top: 00px;width: 220px;margin-left: 30px;color:#ff0000">
+                <p>一年99元</p>
+
+            </div> -->
+
+
+            <div
+                style="color: #eeeeee;font-size: 16px;line-height: 20px; margin-top: 00px;width: 220px;margin-left: 23px">
+                
+            </div>
+            
+        </div>
+
         <div id="color">
 
             <div id="home">
 
 
-                <input id="menuSearch" type="text" placeholder="搜索">
+                <input id="menuSearch" type="text" @input="tap" placeholder="搜索" v-model="value">
                 <a id="menuButton" @click="looks=1" :class="{active:looks==1}" href="#top">
 
                     <p id="menu"><img src="icon\探索.png" id="icon" />探索</p>
@@ -349,11 +627,9 @@
                 </a>
 
 
-                <a id="menuButton" @click="looks=9" :class="{active:looks==9}" href="#top">
+                <a id="menuButton" @click="looks=7" :class="{active:looks==7}" href="#top">
                     <p id="menu"><img src="icon\模拟.png" id="icon" />模拟</p>
                 </a>
-
-
 
 
             </div>
@@ -362,7 +638,15 @@
 
         <div id="app">
             <a name="top">&nbsp;</a>
-            <div id="showPhoto"><div id="weixinBack"><div id="weixin"><img id="weixinImg" src="image/weixinImg.png"><h5 id="title">微信公众号</h5><div id="tip">为什么要加入公众号？我每天会更新一款最新的游戏或者修改器，而网站由于无法及时通知各位，仅有公众号才能满足此条件。</div></div></div><img id="showImg" src="http://a1.huanqiu.cn/images/0ae2b637ee3c58dafab77c03bb965cf5.gif"></div>
+
+            <div id="showPhoto">
+                <div id="weixinBack">
+                    <div id="weixin"><img id="weixinImg" src="image/haoyou.jpg">
+                        <h5 id="title">扫码成为会员</h5>
+                        <div id="tip">微信扫码发送4.9元红包成为猿猴森林大会员，下载3500G单机游戏，每日更新最新单机游戏。</div>
+                    </div>
+                </div><img id="showImg" src="http://a1.huanqiu.cn/images/0ae2b637ee3c58dafab77c03bb965cf5.gif">
+            </div>
             <!-- 哈哈哈哈哈 -->
             <div v-for="item in items1" v-show="looks==1">
                 <div id="totalBox">
@@ -370,93 +654,100 @@
 
                         <div id="textTop">{{item.title}}</div>
                         <div id="textBottom">
-                            <div id="getKey">关注微信公众号获得百度云提取码</div>>
-                            <a v-bind:href="item.href" target="_blank"><button id="getButton">获取</button></a>
+                            <div id="getKey">成为大会员，下载全站单机游戏，仅需4.9元</div>>
+                            <a @click="money=1;title=item.title;href=item.href;key=item.key;photo=item.photo"><button
+                                    id="getButton">获取</button></a>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- 哈哈哈哈哈 -->
             <div v-for="item in items2" v-show="looks==2">
-                <div id="totalBox">
-                    <div id="box"><img id="boxImg" v-bind:src="item.photo">
-
-                        <div id="textTop">{{item.title}}</div>
-                        <div id="textBottom">
-                            <div id="getKey">关注微信公众号获得百度云提取码</div>>
-                            <a v-bind:href="item.href" target="_blank"><button id="getButton">获取</button></a>
+                    <div id="totalBox">
+                        <div id="box"><img id="boxImg" v-bind:src="item.photo">
+    
+                            <div id="textTop">{{item.title}}</div>
+                            <div id="textBottom">
+                                <div id="getKey">成为大会员，下载全站单机游戏，仅需4.9元</div>>
+                                <a @click="money=1;title=item.title;href=item.href;key=item.key;photo=item.photo"><button
+                                        id="getButton">获取</button></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             <!-- 哈哈哈哈哈 -->
             <div v-for="item in items3" v-show="looks==3">
-                <div id="totalBox">
-                    <div id="box"><img id="boxImg" v-bind:src="item.photo">
-
-                        <div id="textTop">{{item.title}}</div>
-                        <div id="textBottom">
-                            <div id="getKey">关注微信公众号获得百度云提取码</div>>
-                            <a v-bind:href="item.href" target="_blank"><button id="getButton">获取</button></a>
+                    <div id="totalBox">
+                        <div id="box"><img id="boxImg" v-bind:src="item.photo">
+    
+                            <div id="textTop">{{item.title}}</div>
+                            <div id="textBottom">
+                                <div id="getKey">成为大会员，下载全站单机游戏，仅需4.9元</div>>
+                                <a @click="money=1;title=item.title;href=item.href;key=item.key;photo=item.photo"><button
+                                        id="getButton">获取</button></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             <!-- 哈哈哈哈哈 -->
             <div v-for="item in items4" v-show="looks==4">
-                <div id="totalBox">
-                    <div id="box"><img id="boxImg" v-bind:src="item.photo">
-
-                        <div id="textTop">{{item.title}}</div>
-                        <div id="textBottom">
-                            <div id="getKey">关注微信公众号获得百度云提取码</div>>
-                            <a v-bind:href="item.href" target="_blank"><button id="getButton">获取</button></a>
+                    <div id="totalBox">
+                        <div id="box"><img id="boxImg" v-bind:src="item.photo">
+    
+                            <div id="textTop">{{item.title}}</div>
+                            <div id="textBottom">
+                                <div id="getKey">成为大会员，下载全站单机游戏，仅需4.9元</div>>
+                                <a @click="money=1;title=item.title;href=item.href;key=item.key;photo=item.photo"><button
+                                        id="getButton">获取</button></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             <!-- 哈哈哈哈哈 -->
             <div v-for="item in items5" v-show="looks==5">
-                <div id="totalBox">
-                    <div id="box"><img id="boxImg" v-bind:src="item.photo">
-
-                        <div id="textTop">{{item.title}}</div>
-                        <div id="textBottom">
-                            <div id="getKey">关注微信公众号获得百度云提取码</div>>
-                            <a v-bind:href="item.href" target="_blank"><button id="getButton">获取</button></a>
+                    <div id="totalBox">
+                        <div id="box"><img id="boxImg" v-bind:src="item.photo">
+    
+                            <div id="textTop">{{item.title}}</div>
+                            <div id="textBottom">
+                                <div id="getKey">成为大会员，下载全站单机游戏，仅需4.9元</div>>
+                                <a @click="money=1;title=item.title;href=item.href;key=item.key;photo=item.photo"><button
+                                        id="getButton">获取</button></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             <!-- 哈哈哈哈哈 -->
             <div v-for="item in items6" v-show="looks==6">
-                <div id="totalBox">
-                    <div id="box"><img id="boxImg" v-bind:src="item.photo">
-
-                        <div id="textTop">{{item.title}}</div>
-                        <div id="textBottom">
-                            <div id="getKey">关注微信公众号获得百度云提取码</div>>
-                            <a v-bind:href="item.href" target="_blank"><button id="getButton">获取</button></a>
+                    <div id="totalBox">
+                        <div id="box"><img id="boxImg" v-bind:src="item.photo">
+    
+                            <div id="textTop">{{item.title}}</div>
+                            <div id="textBottom">
+                                <div id="getKey">成为大会员，下载全站单机游戏，仅需4.9元</div>>
+                                <a @click="money=1;title=item.title;href=item.href;key=item.key;photo=item.photo"><button
+                                        id="getButton">获取</button></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
 
             <!-- 哈哈哈哈哈 -->
-            <div v-for="item in items9" v-show="looks==9">
-                <div id="totalBox">
-                    <div id="box"><img id="boxImg" v-bind:src="item.photo">
-
-                        <div id="textTop">{{item.title}}</div>
-                        <div id="textBottom">
-                            <div id="getKey">关注微信公众号获得百度云提取码</div>>
-                            <a v-bind:href="item.href" target="_blank"><button id="getButton">获取</button></a>
+            <div v-for="item in items7" v-show="looks==7">
+                    <div id="totalBox">
+                        <div id="box"><img id="boxImg" v-bind:src="item.photo">
+    
+                            <div id="textTop">{{item.title}}</div>
+                            <div id="textBottom">
+                                <div id="getKey">成为大会员，下载全站单机游戏，仅需4.9元</div>>
+                                <a @click="money=1;title=item.title;href=item.href;key=item.key;photo=item.photo"><button
+                                        id="getButton">获取</button></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-           
+
 
 
 
@@ -470,12 +761,15 @@
 
 
 
-<script src="use.js"></script>
+
+<script >
+    document.write("<script type='text/javascript' src='image/icon/use.js?time="+Date.parse(new Date())+"'><\/script>");
+</script>
 
 
-
-
-
+<script >
+    document.write("<script type='text/javascript' src='use.js?time="+Date.parse(new Date())+"'><\/script>");
+</script>
 
 
 
